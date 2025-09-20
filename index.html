@@ -1,0 +1,1139 @@
+when i click the book now a javascript pop up shows but i dont want that i want something that looks nice
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitch's Chic & Shine | Premium Salon Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d4af37;
+            --secondary: #8a6d3b;
+            --dark: #1a1a1a;
+            --light: #f8f5f0;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--dark);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--dark);
+        }
+        
+        nav ul {
+            display: flex;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            font-weight: 500;
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .header-cta {
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-cta a {
+            margin-left: 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Services */
+        .services {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .service-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        .service-price {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        /* Stylists */
+        .stylists {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .stylists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .stylist-card {
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .stylist-card.featured:before {
+            content: 'Lead Stylist';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 30px;
+            font-size: 12px;
+            transform: rotate(45deg);
+            z-index: 1;
+        }
+        
+        .stylist-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .stylist-img {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .stylist-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .stylist-card:hover .stylist-img img {
+            transform: scale(1.1);
+        }
+        
+        .stylist-info {
+            padding: 20px;
+        }
+        
+        .stylist-info h3 {
+            margin-bottom: 5px;
+        }
+        
+        .stylist-role {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Booking */
+        .booking {
+            padding: 100px 0;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+        }
+        
+        .booking h2 {
+            color: white;
+        }
+        
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        /* Gallery */
+        .gallery {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover:after {
+            opacity: 1;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .client-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+        }
+        
+        .client-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .client-name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .client-location {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-column p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-contact li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            opacity: 0.8;
+        }
+        
+        .footer-contact li i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+        
+        .footer-hours li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+        
+        .footer-hours li span:first-child {
+            margin-right: 15px;
+        }
+        
+        .footer-newsletter form {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .footer-newsletter input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .footer-newsletter button {
+            padding: 0 15px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .booking-form {
+                padding: 20px;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Mitch's <span>Chic & Shine</span></a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#stylists">Stylists</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-cta">
+                <a href="#booking" class="btn">Book Appointment</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content fade-in">
+            <h1>Experience Premium Beauty Care</h1>
+            <p>Indulge in our premium salon services tailored to enhance your natural beauty and boost your confidence.</p>
+            <a href="#services" class="btn">Explore Services</a>
+            <a href="#booking" class="btn btn-outline">Book Now</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Premium Services</h2>
+                <p>Discover our range of beauty treatments designed to pamper and transform</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="hair styling.jpg" alt="Hair Styling">
+                    </div>
+                    <div class="service-content">
+                        <h3>Hair Styling</h3>
+                        <p>Professional haircuts, styling, and complete hair care services from our expert stylists.</p>
+                        <div class="service-price">From 1,500 KES</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="hair coloring.jpg" alt="Hair Coloring">
+                    </div>
+                    <div class="service-content">
+                        <h3>Hair Coloring</h3>
+                        <p>From subtle highlights to bold color transformations with premium products.</p>
+                        <div class="service-price">From 2,500 KES</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Manicure & Pedicure">
+                    </div>
+                    <div class="service-content">
+                        <h3>Manicure & Pedicure</h3>
+                        <p>Luxurious nail care services with a wide range of colors and designs to choose from.</p>
+                        <div class="service-price">From 1,200 KES</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="facial treatment.jpg" alt="Facial Treatments">
+                    </div>
+                    <div class="service-content">
+                        <h3>Facial Treatments</h3>
+                        <p>Rejuvenating facials tailored to your skin type for a radiant and youthful complexion.</p>
+                        <div class="service-price">From 3,000 KES</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="make up treatment.jpg" alt="Makeup Artistry">
+                    </div>
+                    <div class="service-content">
+                        <h3>Makeup Artistry</h3>
+                        <p>Professional makeup application for special events or just because you deserve it.</p>
+                        <div class="service-price">From 2,000 KES</div>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="spa treatment.jpg" alt="Spa Treatments">
+                    </div>
+                    <div class="service-content">
+                        <h3>Spa Treatments</h3>
+                        <p>Relaxing massages and body treatments to rejuvenate your mind and body.</p>
+                        <div class="service-price">From 4,000 KES</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stylists Section -->
+    <section id="stylists" class="stylists">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Expert Stylists</h2>
+                <p>Our talented team of beauty professionals is ready to make you look and feel amazing</p>
+            </div>
+            
+            <div class="stylists-grid">
+                <div class="stylist-card featured">
+                    <div class="stylist-img">
+                        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" alt="Mitchell Achieng">
+                    </div>
+                    <div class="stylist-info">
+                        <h3>Mitchell Achieng</h3>
+                        <div class="stylist-role">Lead Stylist & Owner</div>
+                        <p>Specializing in braiding and natural hair care with over 8 years of experience. Mitchell is known for her creative styles and attention to detail.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/254110370134"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stylist-card">
+                    <div class="stylist-img">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Wanjiku Mwangi">
+                    </div>
+                    <div class="stylist-info">
+                        <h3>Wanjiku Mwangi</h3>
+                        <div class="stylist-role">Color Specialist</div>
+                        <p>Known for her expertise in hair coloring and chemical treatments with a gentle touch.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/254110370134"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stylist-card">
+                    <div class="stylist-img">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Auma Okoth">
+                    </div>
+                    <div class="stylist-info">
+                        <h3>Auma Okoth</h3>
+                        <div class="stylist-role">Skincare Expert</div>
+                        <p>Specializes in advanced facial treatments and personalized skincare regimens for African skin.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/254110370134"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stylist-card">
+                    <div class="stylist-img">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Adhiambo Otieno">
+                    </div>
+                    <div class="stylist-info">
+                        <h3>Adhiambo Otieno</h3>
+                        <div class="stylist-role">Nail Technician</div>
+                        <p>Creates stunning nail art designs and provides exceptional manicure/pedicure services.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/254110370134"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book Your Appointment</h2>
+                <p>Reserve your slot for a luxurious beauty experience</p>
+            </div>
+            
+            <div class="booking-form">
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="service">Select Service</label>
+                        <select id="service" name="service" required>
+                            <option value="">Choose a Service</option>
+                            <option value="haircut">Haircut & Styling</option>
+                            <option value="coloring">Hair Coloring</option>
+                            <option value="braiding">Braiding</option>
+                            <option value="manicure">Manicure</option>
+                            <option value="pedicure">Pedicure</option>
+                            <option value="facial">Facial Treatment</option>
+                            <option value="makeup">Makeup Application</option>
+                            <option value="spa">Spa Treatment</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="stylist">Preferred Stylist</label>
+                        <select id="stylist" name="stylist">
+                            <option value="">No Preference</option>
+                            <option value="mitchell">Mitchell Achieng</option>
+                            <option value="wanjiku">Wanjiku Mwangi</option>
+                            <option value="auma">Auma Okoth</option>
+                            <option value="adhiambo">Adhiambo Otieno</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Special Requests (Optional)</label>
+                        <textarea id="message" name="message" placeholder="Any special requirements or notes"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Work Gallery</h2>
+                <p>Browse through our portfolio of stunning transformations</p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="h1.jpg" alt="Salon Work">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="h2.jpg" alt="Salon Work">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="h3.jpg" alt="Salon Work">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="h4.jpg" alt="Salon Work">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="h5.jpg" alt="Salon Work">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="h6.jpg" alt="Salon Work">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="h7.jpg" alt="Salon Work">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="h8.jpg" alt="Salon Work">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Read about the experiences of our valued customers</p>
+            </div>
+            
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Client">
+                    </div>
+                    <p class="testimonial-text">"Mitchell transformed my hair with the most beautiful braids I've ever had! The attention to detail was incredible, and the service was exceptional."</p>
+                    <div class="client-name">Wairimu Kariuki</div>
+                    <div class="client-location">Nairobi</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Client">
+                    </div>
+                    <p class="testimonial-text">"I've been coming to Mitch's Chic & Shine for over two years now. The stylists are true professionals who always deliver exactly what I want."</p>
+                    <div class="client-name">Njeri Maina</div>
+                    <div class="client-location">Kisumu</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Client">
+                    </div>
+                    <p class="testimonial-text">"The facial treatment I received from Auma was incredible! My skin has never felt better. I highly recommend this salon to everyone."</p>
+                    <div class="client-name">Akinyi Omondi</div>
+                    <div class="client-location">Mombasa</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Client">
+                    </div>
+                    <p class="testimonial-text">"Adhiambo does the most amazing nail art! I always get compliments wherever I go. The salon is clean and the staff is very professional."</p>
+                    <div class="client-name">Mumbi Wafula</div>
+                    <div class="client-location">Nakuru</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Client">
+                    </div>
+                    <p class="testimonial-text">"Wanjiku is a color genius! She transformed my dull hair into a vibrant masterpiece. The prices are reasonable for the quality of service."</p>
+                    <div class="client-name">Atieno Adongo</div>
+                    <div class="client-location">Eldoret</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Client">
+                    </div>
+                    <p class="testimonial-text">"I had my wedding makeup done here and I couldn't have been happier! Mitchell understood exactly what I wanted and made me look stunning."</p>
+                    <div class="client-name">Chebet Tanui</div>
+                    <div class="client-location">Nairobi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Mitch's Chic & Shine</h3>
+                    <p>Providing premium beauty services with a focus on quality, luxury, and customer satisfaction since 2015.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/254110370134"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Beauty Street, Nairobi, Kenya</li>
+                        <li><i class="fas fa-phone"></i> 0110370134</li>
+                        <li><i class="fas fa-envelope"></i> omindemitchelle@gmail.com</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Opening Hours</h3>
+                    <ul class="footer-hours">
+                        <li><span>Monday - Friday:</span> <span>9:00 AM - 8:00 PM</span></li>
+                        <li><span>Saturday:</span> <span>9:00 AM - 6:00 PM</span></li>
+                        <li><span>Sunday:</span> <span>10:00 AM - 4:00 PM</span></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for special offers and updates.</p>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Your Email Address">
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Mitch's Chic & Shine. All Rights Reserved. | Designed with <i class="fas fa-heart"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation for elements when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElems = document.querySelectorAll('.fade-in');
+            
+            const fadeOptions = {
+                threshold: 0.3
+            };
+            
+            const fadeOnScroll = new IntersectionObserver(function(entries, fadeOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('fade-in');
+                        fadeOnScroll.unobserve(entry.target);
+                    }
+                });
+            }, fadeOptions);
+            
+            fadeElems.forEach(elem => {
+                fadeOnScroll.observe(elem);
+            });
+            
+            // Form submission to n8n workflow
+            const appointmentForm = document.getElementById('appointmentForm');
+            if (appointmentForm) {
+                appointmentForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = new FormData(appointmentForm);
+                    const data = Object.fromEntries(formData.entries());
+                    
+                    try {
+                        // Replace with your n8n webhook URL
+                        const n8nWebhookURL = 'https://zasdy7889999.app.n8n.cloud/webhook/031f6083-6a19-435d-8adc-f4559e8a3ab9';
+                        
+                        // Send data to n8n
+                        const response = await fetch(n8nWebhookURL, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        });
+                        
+                        if (response.ok) {
+                            alert('Thank you for your booking request! We will contact you shortly to confirm your appointment.');
+                            appointmentForm.reset();
+                        } else {
+                            throw new Error('Network response was not ok');
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        alert('There was an error submitting your form. Please try again or contact us directly.');
+                    }
+                });
+            }
+            
+            // Newsletter form
+            const newsletterForm = document.querySelector('.footer-newsletter');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for subscribing to our newsletter!');
+                    newsletterForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+this is the code i am using now that i have edited to my liking just edit it to implement the poup but do not change anything else
