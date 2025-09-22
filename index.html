@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -105,6 +103,19 @@
             align-items: center;
         }
         
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+        
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 28px;
@@ -156,7 +167,8 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;            display: flex;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+            display: flex;
             align-items: center;
             text-align: center;
             color: white;
@@ -286,6 +298,8 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: var(--transition);
             position: relative;
+            max-width: 350px;
+            margin: 0 auto;
         }
         
         .stylist-card.featured:before {
@@ -647,7 +661,10 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <a href="#" class="logo">Mitch's <span>Chic & Shine</span></a>
+            <div class="logo-container">
+                <img src="logo.png" alt="Mitch's Chic & Shine Logo" class="logo-img">
+                <a href="#" class="logo">Mitch's <span>Chic & Shine</span></a>
+            </div>
             
             <nav>
                 <ul>
@@ -687,67 +704,67 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="hair styling.jpg" alt="Hair Styling">
+                        <img src="soft locks.jpg" alt="Soft Locs">
                     </div>
                     <div class="service-content">
-                        <h3>Hair Styling</h3>
-                        <p>Professional haircuts, styling, and complete hair care services from our expert stylists.</p>
-                        <div class="service-price">From 1,500 KES</div>
+                        <h3>Soft Locs</h3>
+                        <p>Beautiful and versatile soft locs that can be styled in various ways to suit your personality.</p>
+                        <div class="service-price">From 600 KES (Labour)</div>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="hair coloring.jpg" alt="Hair Coloring">
+                        <img src="butterfly locks.jpg" alt="Butterfly Locs">
                     </div>
                     <div class="service-content">
-                        <h3>Hair Coloring</h3>
-                        <p>From subtle highlights to bold color transformations with premium products.</p>
-                        <div class="service-price">From 2,500 KES</div>
+                        <h3>Butterfly Locs</h3>
+                        <p>Ethereal and lightweight butterfly locs that create a soft, romantic look.</p>
+                        <div class="service-price">From 600 KES (Labour)</div>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Manicure & Pedicure">
+                        <img src="faux locs.jpg" alt="Faux Locs">
                     </div>
                     <div class="service-content">
-                        <h3>Manicure & Pedicure</h3>
-                        <p>Luxurious nail care services with a wide range of colors and designs to choose from.</p>
-                        <div class="service-price">From 1,200 KES</div>
+                        <h3>Faux Locs</h3>
+                        <p>Protective styling that gives the appearance of traditional locs without the long-term commitment.</p>
+                        <div class="service-price">From 600 KES (Labour)</div>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="facial treatment.jpg" alt="Facial Treatments">
+                        <img src="natural hair twist.jpg" alt="Natural Hair Twist">
                     </div>
                     <div class="service-content">
-                        <h3>Facial Treatments</h3>
-                        <p>Rejuvenating facials tailored to your skin type for a radiant and youthful complexion.</p>
-                        <div class="service-price">From 3,000 KES</div>
+                        <h3>Natural Hair Twist</h3>
+                        <p>Gentle twisting of natural hair to create beautiful, defined curls and protective styles.</p>
+                        <div class="service-price">From 200 KES</div>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="make up treatment.jpg" alt="Makeup Artistry">
+                        <img src="Distress locs.jpg" alt="Distress Locs">
                     </div>
                     <div class="service-content">
-                        <h3>Makeup Artistry</h3>
-                        <p>Professional makeup application for special events or just because you deserve it.</p>
-                        <div class="service-price">From 2,000 KES</div>
+                        <h3>Distress Locs</h3>
+                        <p>Artfully distressed locs that create a unique, textured look with intentional imperfections.</p>
+                        <div class="service-price">From 600 KES (Labour)</div>
                     </div>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-img">
-                        <img src="spa treatment.jpg" alt="Spa Treatments">
+                        <img src="knotless.jpg" alt="Knotless Braids">
                     </div>
                     <div class="service-content">
-                        <h3>Spa Treatments</h3>
-                        <p>Relaxing massages and body treatments to rejuvenate your mind and body.</p>
-                        <div class="service-price">From 4,000 KES</div>
+                        <h3>Knotless Braids</h3>
+                        <p>Seamless braiding technique that eliminates the bulky knot at the base for a more natural look.</p>
+                        <div class="service-price">From 600 KES</div>
                     </div>
                 </div>
             </div>
@@ -758,67 +775,19 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
     <section id="stylists" class="stylists">
         <div class="container">
             <div class="section-title">
-                <h2>Meet Our Expert Stylists</h2>
-                <p>Our talented team of beauty professionals is ready to make you look and feel amazing</p>
+                <h2>Meet Our Expert Stylist</h2>
+                <p>Our talented beauty professional is ready to make you look and feel amazing</p>
             </div>
             
             <div class="stylists-grid">
                 <div class="stylist-card featured">
                     <div class="stylist-img">
-                        <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" alt="Mitchell Achieng">
+                        <img src="stylist.webp" alt="Mitchell Achieng">
                     </div>
                     <div class="stylist-info">
                         <h3>Mitchell Achieng</h3>
                         <div class="stylist-role">Lead Stylist & Owner</div>
                         <p>Specializing in braiding and natural hair care with over 8 years of experience. Mitchell is known for her creative styles and attention to detail.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://wa.me/254110370134"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="stylist-card">
-                    <div class="stylist-img">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Wanjiku Mwangi">
-                    </div>
-                    <div class="stylist-info">
-                        <h3>Wanjiku Mwangi</h3>
-                        <div class="stylist-role">Color Specialist</div>
-                        <p>Known for her expertise in hair coloring and chemical treatments with a gentle touch.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://wa.me/254110370134"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="stylist-card">
-                    <div class="stylist-img">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Auma Okoth">
-                    </div>
-                    <div class="stylist-info">
-                        <h3>Auma Okoth</h3>
-                        <div class="stylist-role">Skincare Expert</div>
-                        <p>Specializes in advanced facial treatments and personalized skincare regimens for African skin.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://wa.me/254110370134"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="stylist-card">
-                    <div class="stylist-img">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Adhiambo Otieno">
-                    </div>
-                    <div class="stylist-info">
-                        <h3>Adhiambo Otieno</h3>
-                        <div class="stylist-role">Nail Technician</div>
-                        <p>Creates stunning nail art designs and provides exceptional manicure/pedicure services.</p>
                         <div class="social-links">
                             <a href="#"><i class="fab fa-instagram"></i></a>
                             <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -859,25 +828,22 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
                         <label for="service">Select Service</label>
                         <select id="service" name="service" required>
                             <option value="">Choose a Service</option>
-                            <option value="haircut">Haircut & Styling</option>
-                            <option value="coloring">Hair Coloring</option>
-                            <option value="braiding">Braiding</option>
-                            <option value="manicure">Manicure</option>
-                            <option value="pedicure">Pedicure</option>
-                            <option value="facial">Facial Treatment</option>
-                            <option value="makeup">Makeup Application</option>
-                            <option value="spa">Spa Treatment</option>
+                            <option value="soft-locs">Soft Locs (Labour) - 600 KES</option>
+                            <option value="butterfly-locs">Butterfly Locs (Labour) - 600 KES</option>
+                            <option value="faux-locs">Faux Locs (Labour) - 600 KES</option>
+                            <option value="natural-twist">Natural Hair Twist - 200 KES</option>
+                            <option value="distress-locs">Distress Locs (Labour) - 600 KES</option>
+                            <option value="knotless">Knotless Braids - 600 KES</option>
+                            <option value="soft-locs-full">Soft Locs All Inclusive - 3100 KES</option>
+                            <option value="natural-matuta">Natural Hair Matuta with Italian Curls - 400 KES</option>
+                            <option value="retouch-soft">Retouch Soft Locs - 300 KES</option>
                         </select>
                     </div>
                     
                     <div class="form-group">
                         <label for="stylist">Preferred Stylist</label>
                         <select id="stylist" name="stylist">
-                            <option value="">No Preference</option>
                             <option value="mitchell">Mitchell Achieng</option>
-                            <option value="wanjiku">Wanjiku Mwangi</option>
-                            <option value="auma">Auma Okoth</option>
-                            <option value="adhiambo">Adhiambo Otieno</option>
                         </select>
                     </div>
                     
@@ -912,35 +878,35 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
             
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="h1.jpg" alt="Salon Work">
+                    <img src="w1.jpg" alt="Salon Work">
                 </div>
                 
                 <div class="gallery-item">
-                    <img src="h2.jpg" alt="Salon Work">
+                    <img src="w2.jpg" alt="Salon Work">
                 </div>
                 
                 <div class="gallery-item">
-                    <img src="h3.jpg" alt="Salon Work">
+                    <img src="w3.jpg" alt="Salon Work">
                 </div>
                 
                 <div class="gallery-item">
-                    <img src="h4.jpg" alt="Salon Work">
+                    <img src="w4.jpg" alt="Salon Work">
                 </div>
                 
                 <div class="gallery-item">
-                    <img src="h5.jpg" alt="Salon Work">
+                    <img src="w5.jpg" alt="Salon Work">
                 </div>
                 
                 <div class="gallery-item">
-                    <img src="h6.jpg" alt="Salon Work">
+                    <img src="w6.jpg" alt="Salon Work">
                 </div>
                 
                 <div class="gallery-item">
-                    <img src="h7.jpg" alt="Salon Work">
+                    <img src="w7.jpg" alt="Salon Work">
                 </div>
                 
                 <div class="gallery-item">
-                    <img src="h8.jpg" alt="Salon Work">
+                    <img src="w1.jpg" alt="Salon Work">
                 </div>
             </div>
         </div>
@@ -959,7 +925,7 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
                     <div class="client-img">
                         <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Client">
                     </div>
-                    <p class="testimonial-text">"Mitchell transformed my hair with the most beautiful braids I've ever had! The attention to detail was incredible, and the service was exceptional."</p>
+                    <p class="testimonial-text">"Mitchell transformed my hair with the most beautiful soft locs I've ever had! The attention to detail was incredible, and the service was exceptional."</p>
                     <div class="client-name">Wairimu Kariuki</div>
                     <div class="client-location">Nairobi</div>
                 </div>
@@ -968,7 +934,7 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
                     <div class="client-img">
                         <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Client">
                     </div>
-                    <p class="testimonial-text">"I've been coming to Mitch's Chic & Shine for over two years now. The stylists are true professionals who always deliver exactly what I want."</p>
+                    <p class="testimonial-text">"I've been coming to Mitch's Chic & Shine for over two years now. Mitchell is a true professional who always delivers exactly what I want."</p>
                     <div class="client-name">Njeri Maina</div>
                     <div class="client-location">Kisumu</div>
                 </div>
@@ -977,7 +943,7 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
                     <div class="client-img">
                         <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Client">
                     </div>
-                    <p class="testimonial-text">"The facial treatment I received from Auma was incredible! My skin has never felt better. I highly recommend this salon to everyone."</p>
+                    <p class="testimonial-text">"The butterfly locs I received from Mitchell were incredible! They were lightweight and lasted for weeks. I highly recommend her to everyone."</p>
                     <div class="client-name">Akinyi Omondi</div>
                     <div class="client-location">Mombasa</div>
                 </div>
@@ -986,7 +952,7 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
                     <div class="client-img">
                         <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" alt="Client">
                     </div>
-                    <p class="testimonial-text">"Adhiambo does the most amazing nail art! I always get compliments wherever I go. The salon is clean and the staff is very professional."</p>
+                    <p class="testimonial-text">"Mitchell does the most amazing knotless braids! I always get compliments wherever I go. The salon is clean and she is very professional."</p>
                     <div class="client-name">Mumbi Wafula</div>
                     <div class="client-location">Nakuru</div>
                 </div>
@@ -995,7 +961,7 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
                     <div class="client-img">
                         <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Client">
                     </div>
-                    <p class="testimonial-text">"Wanjiku is a color genius! She transformed my dull hair into a vibrant masterpiece. The prices are reasonable for the quality of service."</p>
+                    <p class="testimonial-text">"Mitchell is a braiding genius! She transformed my dull hair into a vibrant masterpiece. The prices are reasonable for the quality of service."</p>
                     <div class="client-name">Atieno Adongo</div>
                     <div class="client-location">Eldoret</div>
                 </div>
@@ -1004,7 +970,7 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
                     <div class="client-img">
                         <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Client">
                     </div>
-                    <p class="testimonial-text">"I had my wedding makeup done here and I couldn't have been happier! Mitchell understood exactly what I wanted and made me look stunning."</p>
+                    <p class="testimonial-text">"I had my natural hair twisted for a special event and I couldn't have been happier! Mitchell understood exactly what I wanted and made me look stunning."</p>
                     <div class="client-name">Chebet Tanui</div>
                     <div class="client-location">Nairobi</div>
                 </div>
@@ -1029,7 +995,7 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Beauty Street, Nairobi, Kenya</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Kabarak University, Nakuru, Kenya</li>
                         <li><i class="fas fa-phone"></i> 0110370134</li>
                         <li><i class="fas fa-envelope"></i> omindemitchelle@gmail.com</li>
                     </ul>
@@ -1121,19 +1087,52 @@ background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://imag
             }
             
             // Newsletter form
-            const newsletterForm = document.querySelector('.footer-newsletter');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Thank you for subscribing to our newsletter!');
-                    newsletterForm.reset();
-                });
+const newsletterForm = document.querySelector('.footer-newsletter');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const emailInput = newsletterForm.querySelector('input[type="email"]');
+        const email = emailInput.value.trim();
+        
+        if (!email) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        
+        try {
+            // Use your existing n8n webhook URL
+            const n8nWebhookURL = 'https://zasdy7889999.app.n8n.cloud/webhook-test/87491bc3-c393-4caa-81ee-bda00fa00d4d';
+            
+            // Send data to n8n with type indicator
+            const response = await fetch(n8nWebhookURL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    type: 'newsletter',
+                    email: email,
+                    subscriptionDate: new Date().toISOString(),
+                    source: 'Mitchs Chic & Shine Website'
+                })
+            });
+            
+            if (response.ok) {
+                alert('Thank you for subscribing to our newsletter!');
+                newsletterForm.reset();
+            } else {
+                throw new Error('Failed to subscribe');
             }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('There was an error subscribing to our newsletter. Please try again later.');
+        }
+    });
+}
+
+            
         });
     </script>
 </body>
 </html>
-
-
-
-this is the code i am using now that i have edited to my liking just edit it to implement the poup but do not change anything else
